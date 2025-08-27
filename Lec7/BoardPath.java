@@ -1,25 +1,29 @@
 package Lec7;
+
 import java.util.*;
+
 public class BoardPath {
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		Scanner scn=new Scanner(System.in);
-		int dest=scn.nextInt();
-		int dice=scn.nextInt();
-int ans=sol(0,dest,dice);
-	System.out.println(ans);
+
+		int dice = 6;
+		int dest = 5;
+		int ans = sol(0, 4, 6);
+		System.out.println(ans);
+
 	}
-	public static int sol(int src,int dest,int dice)
-	{
-		if(dest==src)return 1;
-		if(dest<src)return 0;
-		int tc=0;
-		for(int jump=1;jump<=dice;jump++)
-		{
-			tc+=sol(src+jump,dest,dice);
+
+	public static int sol(int cp, int dest, int dice) {
+		if (cp == dest)
+			return 1;
+		if (cp > dest)
+			return 0;
+		int cnt = 0;
+		for (int jump = 1; jump <= dice; jump++) {
+			cnt += sol(cp + jump, dest, dice);
 		}
-		return tc;
+
+		return cnt;
+
 	}
 
 }
-
