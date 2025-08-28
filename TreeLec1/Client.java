@@ -13,6 +13,7 @@ String str="10 true 20 true 40 false false true 50 false false true 30 false tru
 	System.out.println(c.height());
 	System.out.println(c.find(70));
 	System.out.println(c.findMax());
+	c.levelOrder();
 	}
 
 }

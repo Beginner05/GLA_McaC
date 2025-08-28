@@ -115,4 +115,79 @@ public int size(node root)
 		int right=findMax(root.right);
 		return Math.max(left,Math.max(right,root.val));
 	}
-}
+	
+	public void preorder()
+	{
+		preorder(root);
+	}
+	private void preorder(node root)
+	{
+		if(root==null)return;
+		System.out.println(root.val);
+		preorder(root.left);
+		preorder(root.right);
+		
+		
+	}
+	
+	public void postOrder()
+	{
+		postOrder(root);
+	}
+	private void postOrder(node root)
+	{
+		if(root==null)return ;
+		postOrder(root.left);
+		postOrder(root.right);
+		System.out.println(root.val);
+	}
+	
+	public void inOrder()
+	{
+		inOrder(root);
+	}
+	private void inOrder(node root)
+	{
+		if(root==null)return;
+		inOrder(root.left);
+		System.out.println(root.val);
+		inOrder(root.right);
+	}
+	public void levelOrder()
+	{
+		
+		LinkedList<node>q=new LinkedList();
+	q.addLast(root);
+	q.addLast(null);
+	while(q.isEmpty()==false)
+	{
+		node temp=q.removeFirst();
+		if(temp==null)
+		{
+			System.out.println();
+			if(q.isEmpty())break;
+			q.addLast(null);
+			continue;
+		}
+		System.out.print(temp.val+" ");
+		if(temp.left!=null)
+		{
+			q.addLast(temp.left);
+		}
+		if(temp.right!=null)
+		{
+			q.addLast(temp.right);
+		}
+	}
+		
+	}
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+
