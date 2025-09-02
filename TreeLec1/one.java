@@ -5,5 +5,9 @@ public class one {
 	public static void main(String[] args) {
 	
 Two t=new Two();
+	
+
+	
+	
 	}
 	}
